@@ -1,0 +1,7 @@
+pandas
+numpy
+scipy
+flask
+flask_restplus
+flask-cors
+datetime
