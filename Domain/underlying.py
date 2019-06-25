@@ -46,6 +46,7 @@ class Underlying:
     def _load_data_from_json(self):
         logger.info(f'Loading data from JSON')
         try:
+            raise IOError
             with open(Path(self._base_folder_path).joinpath(f'{self.code}.json'), 'r') as _file:
                 data = json.loads(_file.read())
                 self.name = data.get('name') or self.returns_data.get(self.code).get('name')
