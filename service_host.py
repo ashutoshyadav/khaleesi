@@ -11,12 +11,12 @@ from domain.portfolioSuggestor import Suggestor
 
 
 def set_up_logger():
-    log_formatter = logging.Formatter("[%(asctime)s] [%(name)s] [%(levelname)-5.5s]  %(message)s")
+    log_formatter = logging.Formatter("[%(asctime)s] [%(name)s]:[%(lineno)d] [%(levelname)-5.5s]  %(message)s")
     root_logger = logging.getLogger()
 
-    file_handler = logging.FileHandler(f'logs\\portfolioTrader.{datetime.now().strftime("%Y-%m-%d.%H.%M.%S")}.log')
-    file_handler.setFormatter(log_formatter)
-    root_logger.addHandler(file_handler)
+    # file_handler = logging.FileHandler(f'logs\\portfolioTrader.{datetime.now().strftime("%Y-%m-%d.%H.%M.%S")}.log')
+    # file_handler.setFormatter(log_formatter)
+    # root_logger.addHandler(file_handler)
 
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setFormatter(log_formatter)
@@ -28,7 +28,7 @@ def dispatch_for_main():
     pass
 
 
-if __name__ == '__main__':
+def get_app():
     set_up_logger()
     logger = logging.getLogger(__name__)
     logger.info("Start Flask Application")
@@ -37,4 +37,4 @@ if __name__ == '__main__':
     CORS(app)
     api = Api(app)
     api.add_namespace(portfolio)
-    app.run()
+    return app

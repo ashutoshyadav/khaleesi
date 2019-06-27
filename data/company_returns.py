@@ -1,4 +1,6 @@
-{
+import json
+
+returns = {
   "ADANIPORTS.NS": {
     "ROE": 13.70,
     "name": "Adani Ports & Special Economic Zone Ltd",
@@ -348,3 +350,4 @@
     "ROCE": 40.93
   }
 }
+
