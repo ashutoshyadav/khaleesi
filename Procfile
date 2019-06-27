@@ -1,1 +1,1 @@
-web python -m service_host.py $PORT
+web: gunicorn wsgi:app
